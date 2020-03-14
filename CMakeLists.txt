@@ -116,7 +116,7 @@ include_directories(
 # ${catkin_INCLUDE_DIRS}
 )
 
-## Declare a C++ library
+## Declare a C++ libraryvisualize
 # add_library(${PROJECT_NAME}
 #   src/${PROJECT_NAME}/sim-tools.cpp
 # )
@@ -191,6 +191,7 @@ include_directories(
 #############
 ## Testing ##
 #############
+# No tests
 
 ## Add gtest based cpp test target and link libraries
 # catkin_add_gtest(${PROJECT_NAME}-test test/test_sim-tools.cpp)
