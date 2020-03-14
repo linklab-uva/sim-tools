@@ -4,12 +4,12 @@
 
 <!-- global arguments -->
 <arg           name           = 'car_name'
-               default        = 'car_1'>
+               default        = 'car_1'/>
 
 <!-- launch rviz with mapping configuration -->
 <node          pkg            = 'rviz'
                type           = 'rviz'
-               name           = 'rviz'
+               name           = 'rviz_$(arg car_name)'
                args           = '-d $(find sim-tools)/rviz/$(arg car_name).rviz'/>
 
-<launch>
+</launch>
