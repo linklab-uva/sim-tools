@@ -2,10 +2,6 @@
 
 <launch>
 
-<!-- global arguments -->
-<arg           name           = 'car_name'
-               default        = 'car_1'/>
-
 <!-- launch rviz with mapping configuration -->
 <node          pkg            = 'rviz'
                type           = 'rviz'
