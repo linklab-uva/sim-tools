@@ -2,10 +2,27 @@
 
 <launch>
 
+<group         ns             = '$(arg car_name)'>
 <!-- launch rviz with mapping configuration -->
-<node          pkg            = 'rviz'
+<node          name           = 'remote_visualization'
+               pkg            = 'rviz'
                type           = 'rviz'
-               name           = 'rviz_$(arg car_name)'
                args           = '-d $(find sim-tools)/rviz/$(arg car_name).rviz'/>
+
+<group         if             = '$(arg remote_teleop)'>
+<!-- bring up command multiplexer -->
+<node          name           = 'keyboard_teleop'
+               pkg            = 'sim-tools'
+               type           = 'keyboard_teleop.py'
+               args           = '$(arg car_name)'
+               output         = 'screen'/>
+
+<!-- bring up command multiplexer -->
+<node          name           = 'command_multiplexer'
+               pkg            = 'sim-tools'
+               type           = 'command_multiplexer.py'
+               args           = '$(arg car_name)
+                                 $(arg listen_offboard)'
+               output         = 'screen'/> </group> </group>
 
 </launch>
