@@ -12,3 +12,10 @@ Once connected, you should be able to read data using `rostopic echo $`, and all
 ```
 user@remote-computer: roslaunch sim-tools remote-access.launch car_name:=<your_team_car_name>
 ```
+
+** Note: Only one computer per team can launch control nodes **
+To control the car in addition to the visualization node, enter the following command:
+
+```
+user@remote-computer: roslaunch sim-tools remote-access.launch car_name:=<your_team_car_name> remote_teleop:=<true/false> listen_offboard:=<true/false>
+```
