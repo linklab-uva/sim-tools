@@ -9,7 +9,7 @@
 <node          name           = 'remote_visualization'
                pkg            = 'rviz'
                type           = 'rviz'
-               args           = '-d $(find sim-tools)/rviz/$(arg car_name).rviz'/> </group> </group>
+               args           = '-d $(find sim-tools)/rviz/$(arg car_name).rviz'/> </group> </group> </group>
 
 <group         if             = '$(arg remote_teleop)'>
 <group         ns             = '$(arg car_name)'>
