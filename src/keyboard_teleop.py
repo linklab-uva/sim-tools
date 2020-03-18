@@ -53,7 +53,7 @@ if __name__== '__main__':
        command_pub.publish(command)
 
   except:
-    print 'error'
+    print('raise exception: key binding error')
 
   finally:
     command = AckermannDrive();
