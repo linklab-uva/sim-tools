@@ -2,6 +2,7 @@
 
 <launch>
 
+<group         if             = '$(arg visualize)'>
 <group         ns             = 'observers'>
 <group         ns             = '$(arg uva_ID)'>
 <!-- launch rviz with mapping configuration -->
@@ -10,8 +11,8 @@
                type           = 'rviz'
                args           = '-d $(find sim-tools)/rviz/$(arg car_name).rviz'/> </group> </group>
 
-<group         ns             = '$(arg car_name)'>
 <group         if             = '$(arg remote_teleop)'>
+<group         ns             = '$(arg car_name)'>
 <!-- bring up command multiplexer -->
 <node          name           = 'keyboard_teleop'
                pkg            = 'sim-tools'
